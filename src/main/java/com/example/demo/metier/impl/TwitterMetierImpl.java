@@ -40,4 +40,9 @@ public class TwitterMetierImpl implements FollowerMetier{
 		return followerRepository.findAll();
 	}
 
+	@Override
+	public void deleteFollower(FollowerEntity followerEntity) {
+		followerRepository.delete(followerEntity);
+	}
+
 }

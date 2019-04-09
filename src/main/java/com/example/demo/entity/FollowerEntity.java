@@ -11,86 +11,61 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-
 @Entity
-@Table(name = "followers" )
+@Table(name = "followers")
 public class FollowerEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "followersID")
 	private int followersID;
-	
+
 	@Column(name = "id", nullable = false)
 	private long id;
-	
+
 	@Column(name = "createdDate", nullable = true)
 	@Temporal(TemporalType.DATE)
 	private Date createdDate;
-	
+
 	@Column(name = "statusesCount", nullable = true)
 	private int statusesCount;
-	
+
 	@Column(name = "friendsCount", nullable = true)
 	private int friendsCount;
-	
+
 	@Column(name = "followersCount", nullable = true)
 	private int followersCount;
-	
+
 	@Column(name = "favoritesCount", nullable = true)
 	private int favoritesCount;
-	
+
 	@Column(name = "listedCount", nullable = true)
 	private int listedCount;
-	
+
 	@Column(length = 225, name = "language", nullable = true, unique = false)
 	private String language;
-	
+
 	@Column(length = 225, name = "screenName", nullable = true, unique = false)
 	private String screenName;
-	
+
 	@Column(length = 225, name = "name", nullable = true, unique = false)
 	private String name;
-	
+
 	@Column(length = 225, name = "url", nullable = true, unique = false)
 	private String url;
-	
-	@Column(length = 225, name = "profileImageUrl", nullable = true, unique = false)
-	private String profileImageUrl;
-	
+
 	@Column(length = 225, name = "description", nullable = true, unique = false)
 	private String description;
-	
+
 	@Column(length = 225, name = "location", nullable = true, unique = false)
 	private String location;
-	
-	@Column(length = 225, name = "sidebarBorderColor", nullable = true, unique = false)
-	private String sidebarBorderColor;
-	
-	@Column(length = 225, name = "sidebarFillColor", nullable = true, unique = false)
-	private String sidebarFillColor;
-	
-	@Column(length = 225, name = "backgroundColor", nullable = true, unique = false)
-	private String backgroundColor;
-	
-	@Column(length = 225, name = "backgroundImageUrl", nullable = true, unique = false)
-	private String backgroundImageUrl;
-	
-	@Column(length = 225, name = "textColor", nullable = true, unique = false)
-	private String textColor;
-	
-	@Column(length = 225, name = "linkColor", nullable = true, unique = false)
-	private String linkColor;
-	
-	@Column(length = 225, name = "profileBannerUrl", nullable = true, unique = false)
-	private String profileBannerUrl;
 
 	public FollowerEntity(long id) {
 		this.id = id;
 	}
-	
+
 	public FollowerEntity() {
-		
+
 	}
 
 	public long getId() {
@@ -123,14 +98,6 @@ public class FollowerEntity {
 
 	public void setUrl(String url) {
 		this.url = url;
-	}
-
-	public String getProfileImageUrl() {
-		return profileImageUrl;
-	}
-
-	public void setProfileImageUrl(String profileImageUrl) {
-		this.profileImageUrl = profileImageUrl;
 	}
 
 	public String getDescription() {
@@ -205,78 +172,13 @@ public class FollowerEntity {
 		this.listedCount = listedCount;
 	}
 
-
-	public String getSidebarBorderColor() {
-		return sidebarBorderColor;
-	}
-
-	public void setSidebarBorderColor(String sidebarBorderColor) {
-		this.sidebarBorderColor = sidebarBorderColor;
-	}
-
-	public String getSidebarFillColor() {
-		return sidebarFillColor;
-	}
-
-	public void setSidebarFillColor(String sidebarFillColor) {
-		this.sidebarFillColor = sidebarFillColor;
-	}
-
-	public String getBackgroundColor() {
-		return backgroundColor;
-	}
-
-	public void setBackgroundColor(String backgroundColor) {
-		this.backgroundColor = backgroundColor;
-	}
-
-
-	public String getBackgroundImageUrl() {
-		return backgroundImageUrl;
-	}
-
-	public void setBackgroundImageUrl(String backgroundImageUrl) {
-		this.backgroundImageUrl = backgroundImageUrl;
-	}
-
-
-	public String getTextColor() {
-		return textColor;
-	}
-
-	public void setTextColor(String textColor) {
-		this.textColor = textColor;
-	}
-
-	public String getLinkColor() {
-		return linkColor;
-	}
-
-	public void setLinkColor(String linkColor) {
-		this.linkColor = linkColor;
-	}
-
-
-	public String getProfileBannerUrl() {
-		return profileBannerUrl;
-	}
-
-	public void setProfileBannerUrl(String profileBannerUrl) {
-		this.profileBannerUrl = profileBannerUrl;
-	}
-
 	@Override
 	public String toString() {
 		return "FollowerEntity [followersID=" + followersID + ", id=" + id + ", createdDate=" + createdDate
 				+ ", statusesCount=" + statusesCount + ", friendsCount=" + friendsCount + ", followersCount="
 				+ followersCount + ", favoritesCount=" + favoritesCount + ", listedCount=" + listedCount + ", language="
-				+ language + ", screenName=" + screenName + ", name=" + name + ", url=" + url + ", profileImageUrl="
-				+ profileImageUrl + ", description=" + description + ", location=" + location + ", sidebarBorderColor="
-				+ sidebarBorderColor + ", sidebarFillColor=" + sidebarFillColor + ", backgroundColor=" + backgroundColor
-				+ ", backgroundImageUrl=" + backgroundImageUrl + ", textColor=" + textColor + ", linkColor=" + linkColor
-				+ ", profileBannerUrl=" + profileBannerUrl + "]";
+				+ language + ", screenName=" + screenName + ", name=" + name + ", url=" + url + ", description="
+				+ description + ", location=" + location + "]";
 	}
-
-
 
 }

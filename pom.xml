@@ -82,6 +82,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.coreoz</groupId>
+			<artifactId>windmill</artifactId>
+			<version>1.2.0</version>
+		</dependency>
 	</dependencies>
 
 

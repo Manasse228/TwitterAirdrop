@@ -1,7 +1,5 @@
 package com.example.demo.dao;
 
-import java.util.Date;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -18,7 +16,7 @@ public interface FollowerRepository extends JpaRepository<FollowerEntity, Intege
 	@Query("select f FROM FollowerEntity f where f.id = ?1 ")
 	public FollowerEntity getFollowerByID(Long id);
 	
-	@Query("select f FROM FollowerEntity f where f.name = ?1 ")
+	@Query("select f FROM FollowerEntity f where f.	screenName = ?1 ")
 	public FollowerEntity getFollowerByName(String name);
 	
 	@Transactional
@@ -27,7 +25,6 @@ public interface FollowerRepository extends JpaRepository<FollowerEntity, Intege
 			"f.screenName             = :#{#FollowerEntity.screenName} , " +
 			"f.name                   = :#{#FollowerEntity.name} , " +
 			"f.url                    = :#{#FollowerEntity.url} , " +
-			"f.profileImageUrl        = :#{#FollowerEntity.profileImageUrl} , " +
 			"f.description            = :#{#FollowerEntity.description} , " +
 			"f.createdDate            = :#{#FollowerEntity.createdDate} , " +
 			"f.language               = :#{#FollowerEntity.language} , " +
@@ -35,14 +32,7 @@ public interface FollowerRepository extends JpaRepository<FollowerEntity, Intege
 			"f.friendsCount           = :#{#FollowerEntity.friendsCount} , " +
 			"f.followersCount         = :#{#FollowerEntity.followersCount} , " +
 			"f.favoritesCount         = :#{#FollowerEntity.favoritesCount} , " +
-			"f.listedCount            = :#{#FollowerEntity.listedCount} , " +
-			"f.sidebarBorderColor     = :#{#FollowerEntity.sidebarBorderColor} , " +
-			"f.sidebarFillColor       = :#{#FollowerEntity.sidebarFillColor} , " +
-			"f.backgroundColor        = :#{#FollowerEntity.backgroundColor} , " +
-			"f.backgroundImageUrl     = :#{#FollowerEntity.backgroundImageUrl} , " +
-			"f.textColor              = :#{#FollowerEntity.textColor} , " +
-			"f.linkColor              = :#{#FollowerEntity.linkColor} , " +
-			"f.profileBannerUrl       = :#{#FollowerEntity.profileBannerUrl}  " +
+			"f.listedCount            = :#{#FollowerEntity.listedCount} " +
 			"where id   = :#{#FollowerEntity.id} ")
 	public int updateFollower(@Param("FollowerEntity")  FollowerEntity FollowerEntity);
 

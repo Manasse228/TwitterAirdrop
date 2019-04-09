@@ -16,4 +16,6 @@ public interface FollowerMetier {
 	public int updateFollower(FollowerEntity followerEntity);
 	
 	public List<FollowerEntity> getAllFollower(); 
+	
+	public void deleteFollower(FollowerEntity followerEntity);
 }
